@@ -1,25 +1,42 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import AuraVisualizer from './components/AuraVisualizer';
+import EmotionalInput from './components/EmotionalInput';
+import ThemeToggle from './components/ThemeToggle';
 import './App.css';
 
-function App() {
+const App = () => {
+  const [coreEmotion, setCoreEmotion] = useState('#ff6a6a');
+  const [middleEmotion, setMiddleEmotion] = useState('#66ccff');
+  const [outerEmotion, setOuterEmotion] = useState('#cc99ff');
+  const [theme, setTheme] = useState('light');
+
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+    document.body.className = theme === 'light' ? 'dark-mode' : 'light-mode';
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${theme}`}>
+      <h1>Emotional Aura</h1>
+      <ThemeToggle theme={theme} toggleTheme={toggleTheme} />
+      <div className="content">
+        <EmotionalInput
+          setCoreEmotion={setCoreEmotion}
+          setMiddleEmotion={setMiddleEmotion}
+          setOuterEmotion={setOuterEmotion}
+        />
+        <AuraVisualizer
+          coreEmotion={coreEmotion}
+          middleEmotion={middleEmotion}
+          outerEmotion={outerEmotion}
+        />
+      </div>
     </div>
   );
-}
+};
 
 export default App;
+
+
+
+
