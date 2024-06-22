@@ -6,8 +6,9 @@ body, html {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: Arial, sans-serif;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
   overflow: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 body.light-mode {
@@ -19,6 +20,7 @@ body.dark-mode {
   background-color: #1e1e1e;
   color: #fff;
 }
+
 
 
 

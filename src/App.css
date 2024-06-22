@@ -1,23 +1,36 @@
 .App {
   text-align: center;
   position: relative;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
 }
 
 button {
   margin: 1rem;
   padding: 0.5rem 1rem;
   cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #FF6A6A, #FFCC6A);
+  color: #fff;
+  font-size: 1rem;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #FFCC6A, #FF6A6A);
 }
 
 .content {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  margin-top: 2rem;
 }
 
 .emotional-input {
   margin-right: 2rem;
 }
+
 
 
 
