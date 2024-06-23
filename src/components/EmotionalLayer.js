@@ -1,7 +1,7 @@
 import React from 'react';
 import './AuraVisualizer.css';
 
-const AuraVisualizer = ({ coreEmotion, middleEmotion, outerEmotion }) => {
+const EmotionalLayer = ({ coreEmotion, middleEmotion, outerEmotion }) => {
   return (
     <div className="container">
       <div className="glass-dome">
@@ -23,7 +23,7 @@ const AuraVisualizer = ({ coreEmotion, middleEmotion, outerEmotion }) => {
   );
 };
 
-export default AuraVisualizer;
+export default EmotionalLayer;
 
 
 

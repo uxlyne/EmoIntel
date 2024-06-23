@@ -1,25 +1,45 @@
 .layer-navigation {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .layer-dot {
-    width: 12px;
-    height: 12px;
-    margin: 6px 0;
-    border-radius: 50%;
-    background-color: gray;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .layer-dot.active {
-    background-color: blue;
-  }
-  
-  
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.layer-dot {
+  width: 12px;
+  height: 12px;
+  margin: 6px 0;
+  border-radius: 50%;
+  background-color: blue; /* Adjust to match theme */
+  cursor: pointer;
+  position: relative;
+}
+
+.layer-dot.active {
+  background-color: darkblue; /* A different shade for the active state */
+}
+
+.layer-dot::after {
+  content: attr(data-layer);
+  position: absolute;
+  right: 20px; /* Show tooltip on the left */
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.layer-dot:hover::after {
+  opacity: 1;
+}
+
+
   

@@ -1,0 +1,28 @@
+.physical-layer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .aura-container {
+    margin-top: 20px;
+  }
+  
+  .aura {
+    fill: none;
+    stroke: #00f; /* Blue color for the aura */
+    stroke-width: 10;
+    opacity: 0.7;
+    transition: stroke 0.3s, opacity 0.3s;
+  }
+  
+  .aura:hover {
+    stroke: #0ff; /* Lighter blue on hover */
+    opacity: 1;
+  }
+  
+  
