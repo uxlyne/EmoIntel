@@ -1,26 +1,147 @@
-.mental-layer {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    width: 100%;
-    text-align: center;
+.container {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.glass-dome {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 20px 30px rgba(0, 0, 0, 0.2),
+    0 30px 40px rgba(0, 0, 0, 0.1),
+    0 40px 50px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  animation: float 6s ease-in-out infinite;
+}
+
+.glass-dome::before {
+  content: '';
+  position: absolute;
+  top: -15%;
+  left: -15%;
+  width: 130%;
+  height: 130%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0));
+  opacity: 0.4;
+  z-index: 4;
+}
+
+.thought {
+  position: absolute;
+  border-radius: 50%;
+  animation: thoughtAnimation 5s infinite alternate ease-in-out;
+}
+
+.thought-1 {
+  width: 30px;
+  height: 30px;
+  background-color: rgba(106, 90, 205, 0.7);
+  top: 20%;
+  left: 30%;
+}
+
+.thought-2 {
+  width: 50px;
+  height: 50px;
+  background-color: rgba(123, 104, 238, 0.5);
+  top: 40%;
+  left: 60%;
+}
+
+.thought-3 {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(147, 112, 219, 0.6);
+  top: 60%;
+  left: 40%;
+}
+
+.thought-4 {
+  width: 20px;
+  height: 20px;
+  background-color: rgba(138, 43, 226, 0.8);
+  top: 70%;
+  left: 20%;
+}
+
+.thought-5 {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(75, 0, 130, 0.4);
+  top: 50%;
+  left: 70%;
+}
+
+.particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.particles::before, .particles::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 600%;
+  height: 600%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.2) 70%, rgba(255, 255, 255, 0) 100%);
+  animation: particleAnimation 15s infinite linear;
+  transform-origin: center;
+}
+
+.particles::after {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.1) 70%, rgba(255, 255, 255, 0) 100%);
+  animation: particleAnimation 25s infinite linear;
+  animation-delay: -7.5s;
+}
+
+@keyframes thoughtAnimation {
+  0% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
   }
-  
-  .mental-words {
-    margin-top: 20px;
+  50% {
+      transform: scale(1.2) translateY(-10px);
+      opacity: 0.8;
   }
-  
-  .word {
-    font-size: 24px;
-    margin: 10px;
-    transition: transform 0.3s, opacity 0.3s;
+  100% {
+      transform: scale(1) translateY(0);
+      opacity: 1;
   }
-  
-  .word:hover {
-    transform: scale(1.2);
-    opacity: 0.8;
+}
+
+@keyframes particleAnimation {
+  from {
+      transform: translate(-50%, -50%) rotate(0deg);
   }
-  
+  to {
+      transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+}
+
   

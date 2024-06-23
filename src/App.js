@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useTheme } from './contexts/ThemeContext'; // Ensure the correct path
 import EmotionalInput from './components/EmotionalInput';
 import LayerNavigation from './components/LayerNavigation';
 import ChatInterface from './components/ChatInterface';
@@ -15,14 +16,29 @@ import './App.css';
 import './components/LayerNavigation.css';
 import './components/EmotionalInput.css';
 
+const layerDetails = [
+  { name: 'Physical Layer', description: 'This is the physical layer' },
+  { name: 'Energy Layer', description: 'This is the energy layer' },
+  { name: 'Emotional Layer', description: 'This is the emotional layer' },
+  { name: 'Mental Layer', description: 'This is the mental layer' },
+  { name: 'Social Layer', description: 'This is the social layer' },
+  { name: 'Identity Layer', description: 'This is the identity layer' },
+  { name: 'Spiritual Layer', description: 'This is the spiritual layer' },
+  { name: 'Life Plan Layer', description: 'This is the life plan layer' }
+];
+
 const App = () => {
   const [coreEmotion, setCoreEmotion] = useState('#ff6a6a');
   const [middleEmotion, setMiddleEmotion] = useState('#66ccff');
   const [outerEmotion, setOuterEmotion] = useState('#cc99ff');
-  const [selectedLayer, setSelectedLayer] = useState(0); // Default to PhysicalLayer
+  const [selectedLayer, setSelectedLayer] = useState(0);
+  const { theme, toggleTheme } = useTheme();
+
+  useEffect(() => {
+    document.body.setAttribute('data-theme', theme);
+  }, [theme]);
 
   const renderLayerVisual = () => {
-    console.log('Rendering layer:', selectedLayer);
     switch (selectedLayer) {
       case 0:
         return <PhysicalLayer />;
@@ -59,7 +75,8 @@ const App = () => {
             setCoreEmotion={setCoreEmotion}
             setMiddleEmotion={setMiddleEmotion}
             setOuterEmotion={setOuterEmotion}
-            selectedLayer={selectedLayer} // Pass selectedLayer to EmotionalInput
+            layerDetails={layerDetails}
+            selectedLayer={selectedLayer}
           />
         </div>
       </div>
@@ -68,6 +85,10 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
 
 
 

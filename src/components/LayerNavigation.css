@@ -1,45 +1,57 @@
-.layer-navigation {
+.sidebar-navigation {
   position: absolute;
   top: 20px;
-  right: 20px;
+  right: 0;
+  width: 60px; /* Initial width */
+  height: auto; /* Auto height to fit all items */
+  max-height: calc(100% - 40px); /* Ensure it doesn't extend beyond the viewport */
+  background-color: var(--sidebar-background); /* Use theme variable */
+  border-radius: 10px 0 0 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 10px 0;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.sidebar-navigation:hover {
+  width: 200px; /* Expand on hover */
+}
+
+.sidebar-item {
   display: flex;
-  flex-direction: column;
   align-items: center;
-}
-
-.layer-dot {
-  width: 12px;
-  height: 12px;
-  margin: 6px 0;
-  border-radius: 50%;
-  background-color: blue; /* Adjust to match theme */
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  position: relative;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.layer-dot.active {
-  background-color: darkblue; /* A different shade for the active state */
+.sidebar-item:hover {
+  background-color: var(--sidebar-item-hover); /* Use theme variable */
+  transform: scale(1.05);
 }
 
-.layer-dot::after {
-  content: attr(data-layer);
-  position: absolute;
-  right: 20px; /* Show tooltip on the left */
-  top: 50%;
-  transform: translateY(-50%);
-  white-space: nowrap;
-  background: rgba(0, 0, 0, 0.75);
-  color: #fff;
-  padding: 4px 8px;
-  border-radius: 4px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s;
+.sidebar-item.active {
+  background-color: var(--sidebar-item-active); /* Use theme variable */
+  transform: scale(1.05);
 }
 
-.layer-dot:hover::after {
-  opacity: 1;
+.layer-icon {
+  width: 20px; /* Smaller icon size for minimalistic design */
+  height: 20px;
+  margin-right: 10px;
 }
 
+.layer-label {
+  font-size: 14px; /* Slightly smaller font size for modern look */
+  font-weight: 500;
+  color: var(--text-color); /* Use theme variable */
+  white-space: nowrap; /* Prevent label wrapping */
+  opacity: 0; /* Hide text initially */
+  transition: opacity 0.3s ease;
+}
 
-  
+.sidebar-navigation:hover .layer-label {
+  opacity: 1; /* Show text on hover */
+}

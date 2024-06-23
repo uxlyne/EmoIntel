@@ -1,20 +1,23 @@
 import React from 'react';
-import './PhysicalLayer.css';
+import './PhysicalLayer.css'; // Existing layer-specific CSS
+import '../App.css'; // Import the main App.css
 
 const PhysicalLayer = () => {
   return (
-    <div className="physical-layer">
-      <h2>Physical Layer</h2>
-      <div className="aura-container">
-        <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-          <circle className="aura" cx="100" cy="100" r="80" />
-        </svg>
+    <div className="container">
+      <div className="glass-dome">
+        <div className="aura-core"></div>
+        <div className="aura-middle"></div>
+        <div className="aura-outer"></div>
+        <div className="particles"></div>
       </div>
     </div>
   );
 };
 
 export default PhysicalLayer;
+
+
 
 
 

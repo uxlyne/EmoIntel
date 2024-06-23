@@ -3,19 +3,20 @@ import './MentalLayer.css';
 
 const MentalLayer = () => {
   return (
-    <div className="mental-layer">
-      <h2>Mental Layer</h2>
-      <div className="mental-words">
-        <span className="word" style={{ color: '#FF6347' }}>Thought</span>
-        <span className="word" style={{ color: '#4682B4' }}>Idea</span>
-        <span className="word" style={{ color: '#32CD32' }}>Concept</span>
-        <span className="word" style={{ color: '#FFD700' }}>Mind</span>
-        <span className="word" style={{ color: '#8A2BE2' }}>Logic</span>
+    <div className="container">
+      <div className="glass-dome">
+        <div className="thought thought-1"></div>
+        <div className="thought thought-2"></div>
+        <div className="thought thought-3"></div>
+        <div className="thought thought-4"></div>
+        <div className="thought thought-5"></div>
+        <div className="particles"></div>
       </div>
     </div>
   );
 };
 
 export default MentalLayer;
+
 
 
