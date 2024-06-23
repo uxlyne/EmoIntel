@@ -1,17 +1,19 @@
 .title-bar {
     width: 100%;
-    padding: 20px; /* Add more padding for white space */
-    background-color: #fff; /* Set to white to match the theme */
-    color: #000; /* Dark text for contrast */
+    padding: 20px;
+    background: linear-gradient(to right, #ffffff, #f1f1f1);
+    color: #282c34;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* Left justify the title */
     align-items: center;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000; /* Ensure it is above other content */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow for depth */
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-bottom-left-radius: 16px; /* Rounded corners */
+    border-bottom-right-radius: 16px;
   }
   
   .title-bar h1 {
@@ -19,7 +21,9 @@
     font-size: 24px;
     font-weight: normal;
     font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #282c34; /* Simple dark text */
   }
+  
   
 
   

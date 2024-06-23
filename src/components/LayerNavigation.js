@@ -3,7 +3,16 @@ import React from 'react';
 import './LayerNavigation.css';
 
 const LayerNavigation = ({ selectedLayer, setSelectedLayer }) => {
-  const layers = ['Etheric Body', 'Emotional Body', 'Mental Body', 'Astral Body'];
+  const layers = [
+    'Etheric Body', 
+    'Emotional Body', 
+    'Mental Body', 
+    'Astral Body',
+    'Etheric Template',
+    'Celestial Body',
+    'Ketheric Template',
+    'Causal Body'
+  ];
 
   return (
     <div className="layer-navigation">
@@ -19,3 +28,4 @@ const LayerNavigation = ({ selectedLayer, setSelectedLayer }) => {
 };
 
 export default LayerNavigation;
+
