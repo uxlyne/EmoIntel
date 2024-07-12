@@ -1,3 +1,6 @@
+# About
+EmoIntel is an advanced UI concept model designed to visualize the complexity of emotional intelligence. This project enhances the Aura model by introducing multiple layers of emotional dimensions—Mental, Social, Moral, and Existential. Users can interact with a chatbot, which dynamically updates the visual 'aura' in response to the conversation, reflecting changes in emotional states according to the text input. Note that EmoIntel is a conceptual tool intended for demonstration and educational purposes, illustrating potential interactions without performing real emotional analysis.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
